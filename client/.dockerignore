@@ -1,0 +1,12 @@
+.git
+.DS_Store
+.gitignore
+README.md
+Dockerfile
+build
+dist
+docs
+node_modules
+*.md
+.gitlab-ci.yml
+.idea

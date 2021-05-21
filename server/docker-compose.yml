@@ -1,0 +1,14 @@
+version: '3'
+services:
+  rb-server:
+    build: .
+    volumes:
+    - .:/code
+    working_dir: /code
+    command: python manage.py runserver 0.0.0.0:3000
+    ports:
+    - "3030:3000"
+    environment:
+    - DEBUG=1
+    - PYTHONUNBUFFERED=1
+    - DJANGO_SETTINGS_MODULE=server.settings

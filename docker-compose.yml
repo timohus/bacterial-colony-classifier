@@ -1,0 +1,22 @@
+version: '3'
+services:
+  rb-server:
+    build: ./server
+    command: /bin/sh ./start.sh
+    ports:
+    - "9001:80"
+    environment:
+    - DEBUG=0
+    - PYTHONUNBUFFERED=1
+    - DJANGO_SETTINGS_MODULE=server.settings
+
+  rb-client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_HOST=http://localhost:9001/
+    ports:
+      - "9000:80"
+    depends_on:
+      - rb-server

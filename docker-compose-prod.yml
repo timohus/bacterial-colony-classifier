@@ -28,6 +28,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "9000:9000"
+      - "3030:3030"
     depends_on:
       - client
       - server

@@ -13,7 +13,8 @@ COPY requirements.txt ./
 
 RUN apt-get update && apt-get -y install build-essential libpq-dev nginx unzip
 RUN pip install supervisor
-# RUN pip install -r requirements.txt
+
+# We add --default-timeout flag because the tensorflow installation takes pretty long
 RUN pip install --default-timeout=1200 --no-cache-dir -r requirements.txt
 RUN mkdir -p /logs && mkdir -p /run/nginx && mkdir -p /run/daphne && mkdir -p /var/log/supervisor
 

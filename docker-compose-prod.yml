@@ -15,7 +15,7 @@ services:
       context: ./client
       dockerfile: Dockerfile
       args:
-        - REACT_APP_API_URL=http://api.timohus.com
+        - REACT_APP_API_URL=http://timohus.com:3030
     ports:
       - "9000:80"
     depends_on:

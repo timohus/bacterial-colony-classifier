@@ -1,0 +1,13 @@
+version: '3'
+services:
+  server:
+    image: timohus/bacterial-colony-classifier-server:latest
+    ports:
+      - "3030:80"
+
+  client:
+    image: timohus/bacterial-colony-classifier-client:latest
+    ports:
+      - "9000:80"
+    depends_on:
+      - server

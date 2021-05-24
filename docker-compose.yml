@@ -4,11 +4,11 @@ services:
     build: ./server
     command: /bin/sh ./start.sh
     ports:
-    - "3030:80"
+      - "3030:80"
     environment:
-    - DEBUG=0
-    - PYTHONUNBUFFERED=1
-    - DJANGO_SETTINGS_MODULE=server.settings
+      - DEBUG=0
+      - PYTHONUNBUFFERED=1
+      - DJANGO_SETTINGS_MODULE=server.settings
 
   rb-client:
     build:

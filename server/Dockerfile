@@ -22,6 +22,7 @@ RUN wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=down
 
 COPY . ./
 
+RUN mkdir ./ml/models/
 RUN unzip -o ./model.zip -d ./ml/models/v5 && rm -fr ./ml/models/v5.zip
 
 RUN chmod +x ./start.sh

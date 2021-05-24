@@ -34,7 +34,7 @@ services:
     depends_on:
       - client
       - server
-    command: "/bin/sh -c 'chmod +x /init-letsencrypt.sh && /init-letsencrypt.sh && while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
   certbot:
     image: certbot/certbot

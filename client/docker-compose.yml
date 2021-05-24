@@ -1,0 +1,17 @@
+version: '3'
+services:
+  rb-client-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+      args:
+        - REACT_APP_API_URL=http://localhost:3030
+    volumes:
+      - .:/code
+    working_dir: /code
+    command: npm run start
+    ports:
+      - "3000:3000"
+    depends_on:
+      - rb-server

@@ -29,6 +29,8 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 class FileUploadView(views.APIView):
+    authentication_classes = ()
+    permission_classes = ()
     parser_classes = [MultiPartParser]
 
     def put(self, request, filename, format=None):

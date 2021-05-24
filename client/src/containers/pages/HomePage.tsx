@@ -93,7 +93,7 @@ const HomePage: FunctionComponent<ComponentProps> = ({data}) => {
 
         // Send the file
         axios.put(
-          process.env.REACT_APP_SERVER_URL + '/upload/' + image.name,
+          process.env.REACT_APP_API_URL + '/upload/' + image.name,
           formData,
           {})
           .then(res => {

@@ -4,7 +4,7 @@ services:
     build: ./server
     command: /bin/sh ./start.sh
     ports:
-    - "9001:80"
+    - "3030:80"
     environment:
     - DEBUG=0
     - PYTHONUNBUFFERED=1
@@ -15,7 +15,7 @@ services:
       context: ./client
       dockerfile: Dockerfile
       args:
-        - REACT_APP_API_HOST=http://localhost:9001/
+        - REACT_APP_API_URL=http://localhost:3030
     ports:
       - "9000:80"
     depends_on:

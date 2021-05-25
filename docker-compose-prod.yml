@@ -19,7 +19,7 @@ services:
       args:
         - REACT_APP_API_URL=http://timohus.com:3030
     ports:
-      - "80:80"
+      - "4040:80"
     depends_on:
       - server
 

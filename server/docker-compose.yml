@@ -5,9 +5,9 @@ services:
     volumes:
     - .:/code
     working_dir: /code
-    command: python manage.py runserver 0.0.0.0:3000
+    command: python manage.py runserver 0.0.0.0:3030
     ports:
-    - "3030:3000"
+    - "3030:3030"
     environment:
     - DEBUG=1
     - PYTHONUNBUFFERED=1

@@ -2,16 +2,13 @@ version: '3'
 services:
   server:
     build: ./server
-    command: /bin/sh ./start.sh
     container_name: server
-    ports:
-      - "3030:80"
+    expose:
+      - 3030
     networks:
       - main
     environment:
       - DEBUG=0
-      - PYTHONUNBUFFERED=1
-      - DJANGO_SETTINGS_MODULE=server.settings
 
   client:
     build:

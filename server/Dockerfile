@@ -31,4 +31,6 @@ RUN unzip -o ./model.zip -d ./ml/models/v5 && rm -fr ./ml/models/v5.zip
 RUN chmod +x ./start.sh
 RUN cat ./config/nginx.conf > /etc/nginx/nginx.conf && cat ./config/supervisord.conf > /etc/supervisord.conf
 
+EXPOSE 3030
+
 CMD ["./start.sh"]

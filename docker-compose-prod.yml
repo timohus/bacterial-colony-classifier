@@ -15,7 +15,7 @@ services:
       context: ./client
       dockerfile: Dockerfile
       args:
-        - REACT_APP_API_URL=http://api.timohus.com
+        - REACT_APP_API_URL=https://api.timohus.com
     container_name: client
     expose:
       - 3000

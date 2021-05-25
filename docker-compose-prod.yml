@@ -28,6 +28,8 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ./index.html:/usr/share/nginx/html/index.html
+      - ./certbot/conf:/etc/nginx/ssl
+      - ./certbot/data:/var/www/certbot
     ports:
       - "80:80"
       - "443:443"
@@ -36,6 +38,14 @@ services:
     depends_on:
       - client
       - server
+
+  certbot:
+    image: certbot/certbot:latest
+    command: certonly --webroot --webroot-path=/var/www/certbot --email timohus@gmail.com --agree-tos --no-eff-email -d timohus.com -d www.timohus.com -d api.timohus.com -d bacterial-colony-classifier.timohus.com
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/logs:/var/log/letsencrypt
+      - ./certbot/data:/var/www/certbot
 
 networks:
   main:

@@ -18,8 +18,8 @@ services:
       dockerfile: Dockerfile
       args:
         - REACT_APP_API_URL=http://timohus.com:3030
-    ports:
-      - "4040:80"
+    expose:
+      - 3000
     depends_on:
       - server
 

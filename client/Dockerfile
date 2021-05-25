@@ -13,5 +13,6 @@ WORKDIR /code
 RUN npm run build
 
 FROM nginx:1.19.6-alpine
+EXPOSE 3000
 COPY config/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /code/build /usr/share/nginx/html

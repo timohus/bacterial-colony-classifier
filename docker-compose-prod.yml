@@ -43,7 +43,7 @@ services:
   certbot:
     image: certbot/certbot:latest
     container_name: certbot
-    command: certonly --webroot --webroot-path=/var/www/certbot --email timohus@gmail.com --agree-tos --no-eff-email -d timohus.com -d www.timohus.com -d api.timohus.com -d bacterial-colony-classifier.timohus.com
+    command: certonly --webroot --webroot-path=/var/www/certbot --email timohus@gmail.com --agree-tos --no-eff-email -d timohus.com -d api.timohus.com -d bacterial-colony-classifier.timohus.com
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/logs:/var/log/letsencrypt
